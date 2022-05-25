@@ -30,9 +30,12 @@ namespace fallingball
 
             private QLog _logger;
 
+            private List<ItemShopping> _itemShoppings;
+
             private void Awake()
             {
                 _logger = QLog.GetInstance();
+                _itemShoppings = new List<ItemShopping>();
             }
 
             void Start()
@@ -62,17 +65,19 @@ namespace fallingball
                 foreach (var item in shopData.shop_data)
                 {
                     var ball = Instantiate(_itemPrefabs, _gridBallShopping.transform);
-                    ball.GetComponent<ItemShopping>().ItemData = item;
-                    if(item.id == userData.current_selected)
+                    var itemShopping = ball.GetComponent<ItemShopping>();
+                    itemShopping.ItemData = item;
+                    itemShopping.onItemSelectedAction += OnItemSelectChanged;
+                    _itemShoppings.Add(itemShopping);
+                    if (item.id == userData.current_selected)
                     {
-                        ball.GetComponent<ItemShopping>().Active();
+                        itemShopping.Active();
                     }
                     else
                     {
-                        ball.GetComponent<ItemShopping>().Deactive();
-                    }
+                        itemShopping.Deactive();
+                    }  
                 }
-
                 StartCoroutine(ResetItemsLayoutPosition());
             }
 
@@ -101,7 +106,11 @@ namespace fallingball
             private void OnItemSelectChanged(string id)
             {
                 //@todo: update session data
-                //note: create callback select and action signal in ItemShopping
+
+                foreach(var item in _itemShoppings)
+                {
+                    item.OnSelectChanged(id);
+                }
             }
         }
     }

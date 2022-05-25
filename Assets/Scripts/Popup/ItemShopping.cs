@@ -1,5 +1,6 @@
 using data.entity;
 using fallingball.assetsloader;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,8 +13,8 @@ namespace fallingball
     {
         public class ItemShopping : MonoBehaviour
         {
+            public Action<string> onItemSelectedAction;
             private Shop_Item _itemData;
-
             public Shop_Item ItemData
             {
                 get
@@ -27,6 +28,16 @@ namespace fallingball
                 }
             }
 
+            private void Start()
+            {
+                GetComponent<Button>().onClick.AddListener(OnSelected);
+            }
+
+            private void OnDestroy()
+            {
+                onItemSelectedAction = null;
+            }
+
             public void Active()
             {
                 transform.Find("BG_Effect").GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
@@ -35,6 +46,18 @@ namespace fallingball
             public void Deactive()
             {
                 transform.Find("BG_Effect").GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+            }
+
+            public void OnSelectChanged(string id)
+            {
+                if(_itemData.id == id)
+                {
+                    Active();
+                }
+                else
+                {
+                    Deactive();
+                }
             }
 
             private void OnDataChanged()
@@ -50,7 +73,7 @@ namespace fallingball
 
             private void OnSelected()
             {
-                //@todo;
+                onItemSelectedAction?.Invoke(_itemData.id);
             }
         }
     }

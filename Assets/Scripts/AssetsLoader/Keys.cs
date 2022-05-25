@@ -4,7 +4,7 @@ namespace fallingball
     {
         static public class Keys
         {
-            static public string INTRO_VIDEO = "Videos/Splash_Video";
+            static public string INTRO_VIDEO = "Videos/Intro";
 
             static public string HAND_ICON = "Images/hand";
             static public string TAP_ICON = "Images/tap";
