@@ -821,6 +821,7 @@ GameObject:
   - component: {fileID: 319303627}
   - component: {fileID: 319303626}
   - component: {fileID: 319303625}
+  - component: {fileID: 319303628}
   m_Layer: 5
   m_Name: Button_Confirm
   m_TagString: Untagged
@@ -930,6 +931,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319303623}
   m_CullTransparentMesh: 0
+--- !u!114 &319303628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319303623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21359935896242468e45b7fc23a5380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1865016466}
+  _bgSelected: {fileID: 21300000, guid: 23d2f9d15f15a43c5bf2c57de1a27879, type: 3}
+  _bgSelect: {fileID: 21300000, guid: cb37917483ee24fea8fab306393441e5, type: 3}
+  _bgBuy: {fileID: 21300000, guid: 362cdbc283a1c43a7abec33080b04398, type: 3}
 --- !u!1 &336744507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,12 +1471,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _popupContainer: {fileID: 74718878}
   _buttonClose: {fileID: 1204353156}
-  _buttonConfirm: {fileID: 319303625}
+  _buttonConfirm: {fileID: 319303628}
   _textGold: {fileID: 763688671}
   _gridBallShopping: {fileID: 1792842709}
   _scrollBar: {fileID: 158524505}
   _itemPrefabs: {fileID: 3023342579341691163, guid: 55f7bd27252dc8a41ac55e1d11eb39c4, type: 3}
-  _shopData: {fileID: 4900000, guid: 1f80e9e028a6dcc43a51c14fca2cd4da, type: 3}
 --- !u!1 &1170130338
 GameObject:
   m_ObjectHideFlags: 0

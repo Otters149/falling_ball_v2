@@ -1,4 +1,56 @@
 
-==========5/24/2022 6:02:54 PM==========
-5/24/2022 6:56:52 PM [INFO][fallingball.scene.SplashScene] Load Loading Scene Success!
-5/24/2022 6:56:55 PM [INFO][fallingball.scene.LoadingScene] Load MainMenuScene Scene Success!
+==========5/26/2022 2:35:15 PM==========
+5/26/2022 2:35:25 PM [DEBUG][fallingball.MainMenuScene] OnShopClicked
+5/26/2022 2:35:41 PM [DEBUG][fallingball.popup.Shop] Shop Popup Closed
+5/26/2022 2:35:42 PM [DEBUG][fallingball.MainMenuScene] OnStartClicked
+5/26/2022 2:35:45 PM [INFO][fallingball.scene.LoadingScene] Load GameScene Scene Success!
+5/26/2022 2:35:48 PM [DEBUG][fallingball.Tutorial] <b>Position</b>: (758.4, 1239.6)
+<b>delta</b>: (0.0, 0.0)
+<b>eligibleForClick</b>: True
+<b>pointerEnter</b>: TutorialText (UnityEngine.GameObject)
+<b>pointerPress</b>: 
+<b>lastPointerPress</b>: 
+<b>pointerDrag</b>: 
+<b>Use Drag Threshold</b>: True
+<b>Current Raycast:</b>
+Name: TutorialText (UnityEngine.GameObject)
+module: Name: CanvasTutorial (UnityEngine.GameObject)
+eventCamera: Main Camera (UnityEngine.Camera)
+sortOrderPriority: -2147483648
+renderOrderPriority: -2147483648
+distance: 99.70001
+index: 0
+depth: 0
+worldNormal: (0.0, 0.0, -1.0)
+worldPosition: (0.1, -0.2, 90.0)
+screenPosition: (758.4, 1239.6)
+module.sortOrderPriority: -2147483648
+module.renderOrderPriority: -2147483648
+sortingLayer: 0
+sortingOrder: 100
+<b>Press Raycast:</b>
+Name: TutorialText (UnityEngine.GameObject)
+module: Name: CanvasTutorial (UnityEngine.GameObject)
+eventCamera: Main Camera (UnityEngine.Camera)
+sortOrderPriority: -2147483648
+renderOrderPriority: -2147483648
+distance: 99.70001
+index: 0
+depth: 0
+worldNormal: (0.0, 0.0, -1.0)
+worldPosition: (0.1, -0.2, 90.0)
+screenPosition: (758.4, 1239.6)
+module.sortOrderPriority: -2147483648
+module.renderOrderPriority: -2147483648
+sortingLayer: 0
+sortingOrder: 100
+button: Left
+clickTime: 0
+clickCount: 0
+device: Mouse:/Mouse
+pointerType: MouseOrPen
+touchId: 0
+pressPosition: (758.4, 1239.6)
+trackedDevicePosition: (0.0, 0.0, 0.0)
+trackedDeviceOrientation: (0.0, 0.0, 0.0, 0.0)
+

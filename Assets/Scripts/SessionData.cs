@@ -2,6 +2,8 @@ using data.entity;
 using fallingball.assetsloader;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 using utilpackages.qlog;
 
@@ -39,6 +41,21 @@ namespace fallingball
             {
                 _logger.LogError(_logger.GetClassName(this), "Could not load user data!");
             }
+        }
+
+        public void Sync()
+        {
+            var shop = JsonUtility.ToJson(_shopData);
+            var user = JsonUtility.ToJson(_userData);
+            _logger.LogInfo(_logger.GetClassName(this), shop);
+            _logger.LogInfo(_logger.GetClassName(this), user);
+            File.WriteAllText(AssetDatabase.GetAssetPath(AssetsLoader.GetResource<TextAsset>(Keys.SHOP_DATA)), shop);
+            File.WriteAllText(AssetDatabase.GetAssetPath(AssetsLoader.GetResource<TextAsset>(Keys.USER_DATA)), user);
+#if _DEBUG
+            _logger.LogWarning(_logger.GetClassName(this), "[SaveData] Setdirty: data will be revert after quit game");
+            EditorUtility.SetDirty(AssetsLoader.GetResource<TextAsset>(Keys.SHOP_DATA));
+            EditorUtility.SetDirty(AssetsLoader.GetResource<TextAsset>(Keys.USER_DATA));
+#endif
         }
     }
 

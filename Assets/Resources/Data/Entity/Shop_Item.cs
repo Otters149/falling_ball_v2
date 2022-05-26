@@ -14,6 +14,9 @@ namespace data
             public string place_holder;
             public int price;
             public bool is_bought;
+
+            public static bool operator ==(Shop_Item item1, string id) => item1.id == id;
+            public static bool operator !=(Shop_Item item1, string id) => item1.id != id;
         }
     }
 }

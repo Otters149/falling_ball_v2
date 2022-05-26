@@ -60,10 +60,16 @@ namespace fallingball
                 }
             }
 
+            public void Buy()
+            {
+                _itemData.is_bought = true;
+                transform.Find("Price").GetComponent<TextMeshProUGUI>().text = _itemData.is_bought ? "Owned" : _itemData.price.ToString();
+            }
+
             private void OnDataChanged()
             {
                 transform.Find("Image").GetComponent<Image>().sprite = AssetsLoader.GetResource<Sprite>(_itemData.place_holder);
-                transform.Find("Price").GetComponent<TextMeshProUGUI>().text = _itemData.price.ToString();
+                transform.Find("Price").GetComponent<TextMeshProUGUI>().text =_itemData.is_bought? "Owned" : _itemData.price.ToString();
             }
 
             private void Awake()
